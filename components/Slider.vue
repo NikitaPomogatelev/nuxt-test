@@ -27,12 +27,12 @@ export default {
   data() {
     return {
       banners: [
-        '/nuxt-test/dist/about-1.jpg',
-        '/nuxt-test/dist/about-2.jpg',
-        '/nuxt-test/dist/about-3.jpg',
-        '/nuxt-test/dist/about-1.jpg',
-        '/nuxt-test/dist/about-2.jpg',
-        '/nuxt-test/dist/about-3.jpg',
+        '/about-1.jpg',
+        '/about-2.jpg',
+        '/about-3.jpg',
+        '/about-1.jpg',
+        '/about-2.jpg',
+        '/about-3.jpg',
       ],
       swiperOption: {
         slidesPerView: 3,
