@@ -1,0 +1,104 @@
+@import 'mixins/breakpoints.scss';
+
+.hero {
+  background-color: $violet;
+  min-height: 600px;
+  height: 100%;
+  padding: 60px 0 40px;
+
+  &__container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    @include medium {
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+    max-width: 542px;
+    margin-bottom: 25px;
+    @include medium {
+      grid-column: span 12;
+      grid-row: 1 / 2;
+    }
+    @include mobile {
+      max-height: max-content;
+    }
+  }
+
+  &__descr {
+    grid-column: 1 / 7;
+    grid-row: 2 / 3;
+    max-width: 565px;
+    max-height: max-content;
+    align-self: end;
+    @include roboto-regular;
+    font-size: 26px;
+    @include medium {
+      grid-column: span 12;
+      grid-row: 3 / 4;
+    }
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__picture {
+    position: relative;
+    grid-column: 7 / 13;
+    grid-row: 3 span;
+    justify-self: end;
+    padding-bottom: 20%;
+    @include medium {
+      grid-column: span 12;
+      grid-row: 2 / 3;
+      justify-self: center;
+      margin-bottom: 38px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 60%;
+      bottom: 0;
+      display: inline-block;
+      width: 68.5%;
+      height: 13.2%;
+      border: 1px solid red;
+      transform: translateX(-50%);
+      background-color: rgba($black, 0.3);
+      filter: blur(30px);
+    }
+  }
+  &__scroll {
+    grid-column: 12 span;
+    grid-row: 1 span;
+    max-width: 200px;
+    margin: 0 auto;
+
+    text-align: center;
+    @include norms-regular;
+    font-size: 20px;
+    line-height: 1.1;
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      width: 17px;
+      height: 9px;
+      background-image: url('@/static/arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    @include medium {
+      display: none;
+    }
+  }
+}

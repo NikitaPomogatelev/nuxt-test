@@ -1,0 +1,79 @@
+@import 'mixins/breakpoints.scss';
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include roboto-regular;
+  font-size: 26px;
+  line-height: 1.2;
+  min-width: 320px;
+  color: $white;
+  // background-color: $color-white;
+}
+
+.container {
+  max-width: 1290px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include mobile {
+    max-width: 1280px;
+    padding: 0 10px;
+  }
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
